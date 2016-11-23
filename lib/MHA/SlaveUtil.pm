@@ -27,7 +27,7 @@ use File::Basename;
 use MHA::NodeUtil;
 use DBI;
 
-use constant Get_Version_SQL => "SELECT VERSION() AS Value";
+use constant Get_Version_SQL => "SELECT SUBSTRING_INDEX(VERSION(),'-',1) AS Value";
 use constant Get_Datadir_SQL => "SELECT \@\@global.datadir AS Value";
 use constant Get_Relay_Log_Info_Type_SQL =>
   "SELECT \@\@global.relay_log_info_repository AS Value";
